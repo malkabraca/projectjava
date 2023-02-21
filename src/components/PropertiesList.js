@@ -12,8 +12,8 @@ const initialPropertiesList = (
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
   isAdmin = isAdminParam;
-  console.log("🚀 ~ file: PropertiesList.js:15 ~ isAdmin:", isAdmin)
-  
+  console.log("🚀 ~ file: PropertiesList.js:15 ~ isAdmin:", isAdmin);
+
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
   updatePropertiesList(propertiesArrFromHomePage);
@@ -31,18 +31,23 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
 
 const createItem = (name, Credit, img, id) => {
   const adminBtns = `
-  <button type="button" class="btn btn-warning w-100" id="propertyListEditBtn-${id}">
-    <i class="bi bi-pen-fill"></i> Edit
+  <div class="col-md-1">
+  <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
+    <i class="bi bi-pen-fill"></i>
   </button>
-  <button type="button" class="btn btn-danger w-100" id="propertyListDeleteBtn-${id}">
-    <i class="bi bi-x-circle-fill"></i> Delete
-  </button
+  </div>
+  <div class="col-md-1">
+  <button type="button" class="btn btn btn-light w-100" id="propertyListDeleteBtn-${id}">
+  <i class="bi bi-trash3-fill"></i>
+  </button>
+  </div>
   `;
   return `
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${img}" class="img-fluid" alt="${name}"style="margin: 1.5rem;"/>
+        <img src="${img}" class="img-fluid" alt="${name}"style="margin: 1.5rem; width: 8rem;
+        height: 8rem;"/>
         </div>
         <div class="col-md-6">
         <div>${img}</div>
@@ -53,12 +58,7 @@ const createItem = (name, Credit, img, id) => {
         <div class="col-md-1">
         <h5 class="card-title">${Credit}</h5>
         </div>
-        <div class="col-md-2">
-        <button type="button" class="btn btn-success w-100">
-          <i class="bi bi-currency-dollar"></i> Buy now
-        </button>
         ${isAdmin ? adminBtns : ""}
-        </div>
     </div>
     </li>
   `;

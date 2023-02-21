@@ -10,7 +10,8 @@ const createData = () => {
       "Kenny's house",
       8.12,
       `Groge w Bosh`,
-      "./assets/imgs/camera.PNG"
+      // "./assets/imgs/camera.PNG"
+       "https://litb-cgis.rightinthebox.com/images/640x640/202103/bps/product/inc/khwcno1616755327092.jpg"
     ),
     new Property(
       id++,

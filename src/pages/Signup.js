@@ -60,7 +60,7 @@ window.addEventListener("load", () => {
     checkNameInput();
   }
   if (inputLastName.value !== "") {
-    checklastNameInput();
+    checkLastNameInput();
   }
   if (inputEmail.value !== "") {
     checkEmailInput();
