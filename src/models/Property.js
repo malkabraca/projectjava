@@ -1,15 +1,30 @@
 class Property {
   id;
-  name;
+  title;
+  subtitle;
+  description;
   price;
-  Credit;
+  credit;
+  createdAt;
   imgUrl;
-  constructor(id, name, price, Credit, imgUrl) {
+  constructor(
+    id,
+    title,
+    subtitle,
+    description,
+    price,
+    credit,
+    createdAt,
+    imgUrl
+  ) {
     this.id = id;
-    this.name = name;
+    this.title = title;
+    this.subtitle = subtitle;
+    this.description = description;
     this.price = price;
-    this.Credit = Credit;
+    this.Credit = credit;
     this.imgUrl = imgUrl;
+    this.createdAt = createdAt;
   }
 }
 export default Property;

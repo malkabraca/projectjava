@@ -42,15 +42,6 @@ class User {
     this.password = password;
     this.btnBusinessClient = btnBusinessClient;
   }
-  // checkBusinessClient = () => {
-  //   debugger;
-  //   let btnBusinessClient;
-  //   if (btnBusinessClient.checked) {
-  //     return (this.btnBusinessClient = true);
-  //   } else {
-  //     return (this.btnBusinessClient = false);
-  //   }
-  // };
 }
 
 export default User;
