@@ -36,7 +36,7 @@ window.addEventListener("load", () => {
   propertiesArr = JSON.parse(propertiesArr);
   originalPropertiesArr = [...propertiesArr];
   isAdmin = checkIfAdmin();
-  console.log("🚀 ~ file: Homepage.js:39 ~ window.addEventListener ~ isAdmin:", isAdmin)
+  // console.log("🚀 ~ file: Homepage.js:39 ~ window.addEventListener ~ isAdmin:", isAdmin)
   
   //passing propertiesArr to PropertiesGallery.js
   initialPropertiesGallery(propertiesArr);

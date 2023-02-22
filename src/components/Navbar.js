@@ -22,7 +22,7 @@ const initializeNavbar = (showPopupFromApp) => {
   }
   showPopup = showPopupFromApp;
   /* nav */
-  navAddNewPropertyLink = document.getElementById("nav-add-new-property-link");
+  navAddNewPropertyLink = document.getElementById("nav-addpic-link");
   if (!isAdmin) {
     navAddNewPropertyLink.classList.add("d-none");
   }

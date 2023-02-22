@@ -235,7 +235,7 @@ const checkRePasswordInput = () => {
 
 const checkStringInput = () => {
   let errorInputRules = false;
-  console.log("inside string");
+  // console.log("inside string");
   for (i = 0; i < inputStrings.length; i++) {
     /*  console.log("place", i, "string - ", inputStrings[i].value); */
     let errorArr = validateString(inputStrings[i].value);

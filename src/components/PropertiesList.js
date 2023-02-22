@@ -12,7 +12,7 @@ const initialPropertiesList = (
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
   isAdmin = isAdminParam;
-  console.log("🚀 ~ file: PropertiesList.js:15 ~ isAdmin:", isAdmin);
+  // console.log("🚀 ~ file: PropertiesList.js:15 ~ isAdmin:", isAdmin);
 
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;

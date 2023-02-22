@@ -3,28 +3,29 @@ import handlePageChange from "./routes/router.js";
 import "./initialData/initialData.js";
 import "./pages/Signup.js";
 import "./pages/Login.js";
-// import "./pages/LoginPage.js";
-// import "./pages/ProfilePage.js";
+import "./pages/ProfilePage.js";
 import { showNewPopup } from "./pages/Homepage.js";
-// import initializeNavbar from "./components/Navbar.js";
-// import checkIfConnected from "./utils/checkIfConnected.js";
+import initializeNavbar from "./components/Navbar.js";
+import checkIfConnected from "./utils/checkIfConnected.js";
+import"./pages/Page404.js";
+
 
 const navHomeLink = document.getElementById("nav-home-link");
 const navAboutusLink = document.getElementById("nav-aboutus-link");
-const navAddpicLink = document.getElementById("nav-addpic-link");
+// const navAddpicLink = document.getElementById("nav-addpic-link");
 const navSignupPageLink = document.getElementById("nav-signup-page");
 const navLoginPageLink = document.getElementById("nav-login-page");
 const navEditProfilePage = document.getElementById("nav-edit-profile-page");
 const navLogout = document.getElementById("nav-logout");
 
-// window.addEventListener("load", () => {
-//   initializeNavbar(showNewPopup);
-//   if (checkIfConnected()) {
-//     let user = localStorage.getItem("token");
-//     user = JSON.parse(user);
-//     navEditProfilePage.innerText = user.name;
-//   }
-// });
+window.addEventListener("load", () => {
+  initializeNavbar(showNewPopup);
+  if (checkIfConnected()) {
+    let user = localStorage.getItem("token");
+    user = JSON.parse(user);
+    navEditProfilePage.innerText = user.name;
+  }
+});
 
 navHomeLink.addEventListener("click", function () {
   handlePageChange(PAGES.HOME);
@@ -32,9 +33,9 @@ navHomeLink.addEventListener("click", function () {
 navAboutusLink.addEventListener("click", function () {
   handlePageChange(PAGES.ABOUT);
 });
-navAddpicLink.addEventListener("click", function () {
-  handlePageChange(PAGES.ADDPIC);
-});
+// navAddpicLink.addEventListener("click", function () {
+//   handlePageChange(PAGES.ADDPIC);
+// });
 navSignupPageLink.addEventListener("click", function () {
   handlePageChange(PAGES.SIGNUP);
 });
