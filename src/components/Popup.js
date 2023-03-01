@@ -3,6 +3,8 @@ import getNextId from "../utils/getNextId.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import validateUrl from "../validation/validateUrl.js";
+import validateDete from "../validation/validateDete.js";
+
 
 let selectedProperty, editProperty;
 const editPropertiesPopupImgDisplay = document.getElementById(
@@ -47,7 +49,7 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   editPropertiesPopupSubtitle.value = selectedProperty.subtitle;
   editPropertiesPopupDescription.value = selectedProperty.description;
   editPropertiesPopupPrice.value = selectedProperty.price;
-  editPropertiesPopupCredit.value = selectedProperty.Credit;
+  editPropertiesPopupCredit.value = selectedProperty.credit;
   editPropertiesPopupCreatedAt.value = selectedProperty.createdAt;
   editPropertiesPopupImg.value = selectedProperty.imgUrl;
   showPopup();
@@ -99,13 +101,11 @@ const checkImgUrlOkUrl = () => {
     editPropertiesPopupImg.classList.remove("is-invalid");
     document.getElementById("alert-imgUrl").classList.add("d-none");
     imgUrlOk = true;
-    console.log(imgUrlOk);
   } else {
     //the text is not ok
     editPropertiesPopupImg.classList.add("is-invalid");
     document.getElementById("alert-imgUrl").classList.remove("d-none");
     imgUrlOk = false;
-    console.log(imgUrlOk);
   }
   checkIfCanEnableBtn();
 };

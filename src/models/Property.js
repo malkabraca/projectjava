@@ -22,7 +22,7 @@ class Property {
     this.subtitle = subtitle;
     this.description = description;
     this.price = price;
-    this.Credit = credit;
+    this.credit = credit;
     this.createdAt = createdAt;
     this.imgUrl = imgUrl;
   }

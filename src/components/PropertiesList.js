@@ -12,8 +12,6 @@ const initialPropertiesList = (
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
   isAdmin = isAdminParam;
-  // console.log("🚀 ~ file: PropertiesList.js:15 ~ isAdmin:", isAdmin);
-
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
   updatePropertiesList(propertiesArrFromHomePage);
@@ -29,7 +27,7 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
   createList();
 };
 
-const createItem = (title, Credit,imgUrl, id) => {
+const createItem = (title, imgUrl,credit, id) => {
   const adminBtns = `
   <div class="col-md-1">
   <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
@@ -56,7 +54,7 @@ const createItem = (title, Credit,imgUrl, id) => {
         <h5 class="card-title">${title}</h5>
         </div>
         <div class="col-md-1">
-        <h5 class="card-title">${Credit}</h5>
+        <h5 class="card-title">${credit}</h5>
         </div>
         ${isAdmin ? adminBtns : ""}
     </div>
@@ -104,7 +102,8 @@ const createList = () => {
   for (let property of propertiesArr) {
     innerStr += createItem(
       property.title,
-      property.Credit,
+      property.imgUrl,
+      property.credit,
       property.imgUrl,
       property.id
     );

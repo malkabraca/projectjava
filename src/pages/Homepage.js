@@ -29,15 +29,12 @@ let isAdmin;
 
 window.addEventListener("load", () => {
   propertiesArr = localStorage.getItem("props");
-  //console.log(propertiesArr);
   if (!propertiesArr) {
     return;
   }
   propertiesArr = JSON.parse(propertiesArr);
   originalPropertiesArr = [...propertiesArr];
   isAdmin = checkIfAdmin();
-  // console.log("🚀 ~ file: Homepage.js:39 ~ window.addEventListener ~ isAdmin:", isAdmin)
-  
   //passing propertiesArr to PropertiesGallery.js
   initialPropertiesGallery(propertiesArr);
   initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup);
@@ -55,7 +52,7 @@ const initializeElements = () => {
   propertiesGallery = document.getElementById("propertiesGallery");
   propertiesList = document.getElementById("propertiesList");
   propertiesCarusel = document.getElementById("propertiesCarusel");
-  displayNow = propertiesCarusel; // choose who we want to display
+  displayNow = propertiesList; // choose who we want to display
   displayToDisplay(displayNow);
 };
 
@@ -156,7 +153,7 @@ const addNewProperty = (newProperty) => {
 
 const editProperty = () => {
   saveToLocalStorage(originalPropertiesArr);
-  updateDisplays();
+  updateDisplays(); // update html
 };
 
 export { showNewPopup };

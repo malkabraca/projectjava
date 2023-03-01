@@ -16,25 +16,26 @@ const updatePropertiesGallery = (propertiesArrFromHomePage) => {
   createGallery();
 };
 
-const createCard = (name, Credit, price, img) => {
+const createCard = (title, credit, price, imgUrl) => {
   return `
   <div class="col">
     <div class="card">
       <img
-        src="${img}"
+        src="${imgUrl}"
         class="card-img-top"
-        alt="${name}"
+        alt="${title}"
         "style="margin: 1.5rem; width: 8rem; height: 8rem;"
       />
       <div class="card-body">
-        <h5 class="card-title">${name}</h5>
+        <h5 class="card-title">${title}</h5>
         <p class="card-text">Credit: 
-          ${Credit}
+          ${credit}
         </p>
-        <ul class="list-group list-group-flush">
-        <li class="list-group-item">price: ${price}</li>
-      </ul>
-      <i class="bi bi-cart3"></i>
+        <div class="d-flex justify-content-between">
+        <div>price: ${price}$</div>
+        <div> <i class="bi bi-cart3"></i></div>
+        </div>
+      
       </div>
     </div>
   </div>
@@ -45,8 +46,8 @@ const createGallery = () => {
   let innerStr = "";
   for (let property of propertiesArr) {
     innerStr += createCard(
-      property.name,
-      property.Credit,
+      property.title,
+      property.credit,
       property.price,
       property.imgUrl
     );

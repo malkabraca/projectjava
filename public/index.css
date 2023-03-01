@@ -1,4 +1,4 @@
-/* .carusel {
+.carusel {
   width: 100%;
   height: 66.6vh;
 }
@@ -48,28 +48,32 @@
   width: 100%;
 }
 
-/* .responsive-mt {
+.responsive-mt {
   margin-top: 0.9rem;
-} */
-
-/* @media (max-width: 991px) {
+}
+@media (max-width: 991px) {
   .responsive-mt {
     margin-top: 0.9rem;
   }
+
   .responsive-nav-flex {
     flex-direction: column;
-  } 
-}*/
+  }
+}
 
 .red-asterik:after {
   content: "*";
   color: red;
 }
 
-
-  @media (max-width: 991px)
-  {
-    #border-bottom-list{
-      display: none;
-    }
+@media (max-width: 991px) {
+  #border-bottom-list {
+    display: none;
   }
+}
+
+#editPropertiesPopupImgDisplay {
+  width: 10rem;
+  height: 10rem;
+  margin: auto;
+}

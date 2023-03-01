@@ -7,50 +7,34 @@ const createData = () => {
   let propertiesArr = [
     new Property(
       id++,
-      "Kenny's house",
+      "title",
+      "Kenny's house subtitle",
+      "Kenny's house description",
       8.12,
-      `Groge w Bosh`,
-      // "./assets/imgs/camera.PNG"
+      `Groge w Bosh credit`,
+      "8.12 createdAt",
        "https://litb-cgis.rightinthebox.com/images/640x640/202103/bps/product/inc/khwcno1616755327092.jpg"
     ),
     new Property(
       id++,
-      "Chocolate house",
-      20,
-      `Groge w Bosh`,
-      "./assets/imgs/cart.PNG"
+      "title",
+      "Kenny's house subtitle",
+      "Kenny's house description",
+      8.12,
+      `Groge w Bosh credit`,
+      "8.12 createdAt",
+       "https://images.squarespace-cdn.com/content/v1/5a7c0544d74cffa3a6ce66b3/1608482750877-VQE2XI09QEHZZIVGLTJH/%D7%A0%D7%99%D7%A8+%D7%A8%D7%95%D7%99%D7%98%D7%9E%D7%9F+%D7%91%D7%A9%D7%95%D7%95%D7%99%D7%A5+-+%D7%9C%D7%A6%D7%99%D7%93%D7%99+%D7%94%D7%AA%D7%9E%D7%95%D7%A0%D7%AA+%D7%A0%D7%95%D7%A3+%D7%A9%D7%A6%D7%99%D7%9C%D7%9E%D7%AA%D7%99+%D7%91%D7%90%D7%95%D7%AA%D7%95+%D7%9E%D7%A7%D7%95%D7%9D.jpg?format=2500wg"
     ),
     new Property(
       id++,
-      "Kenny's beach house",
-      25,
-      `Groge w Bosh`,
-      "./assets/imgs/logo.PNG"
+      "title",
+      "Kenny's house subtitle",
+      "Kenny's house description",
+      8.12,
+      `Groge w Bosh credit`,
+      "8.12 createdAt",
+       "https://litb-cgis.rightinthebox.com/images/640x640/202103/bps/product/inc/khwcno1616755327092.jpg"
     ),
-    // new Property(
-    //   id++,
-    //   "John's raft",
-    //   9.9,
-    //   `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-    //     Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-    //   "./assets/imgs/4.jpg"
-    // ),
-    // new Property(
-    //   id++,
-    //   "John's pie",
-    //   3.14,
-    //   `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-    //     Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-    //   "./assets/imgs/5.jpg"
-    // ),
-    // new Property(
-    //   id++,
-    //   "Kart's dream house",
-    //   2.5,
-    //   `Lorem ipsum dolor, sit amet consectetur adipisicing elit. Id quasi ea culpa magnam enim soluta, totam, illum maiores, incidunt in quo natus eius sint. Alias nihil nobis dolor id cumque!
-    //     Tempore tempora, et delectus dicta mollitia quo natus magnam vero aliquam quisquam! Nam expedita labore reprehenderit omnis eum. Aliquid neque suscipit reiciendis, sequi soluta illum quae at laborum quasi voluptatum.`,
-    //   "./assets/imgs/6.jpg"
-    // ),
   ];
   return propertiesArr;
 };
