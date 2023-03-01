@@ -54,7 +54,7 @@ window.addEventListener("load", () => {
             inputStreet.value = user.street;
             inputHouseNumber.value = user.houseNumber;
             inputZipCode.value = user.zipCode;
-            btnBusinessClient.value = user.btnBusinessClient;
+            btnBusinessClient.checked = user.btnBusinessClient;
             inputEmail.value = user.email;
             inputPassword.value = user.password;
             inputRePassword.value = user.password;
@@ -312,7 +312,7 @@ window.addEventListener("load", () => {
                 user.street=inputStreet.value;
                 user.houseNumber=inputHouseNumber.value;
                 user.zipCode=inputZipCode.value;
-                user.btnBusinessClient=btnBusinessClient.value;
+                user.btnBusinessClient=token.isAdmin =btnBusinessClient.checked;
                 user.password=inputPassword.value;
                 user.password=inputRePassword.value;
                 localStorage.setItem("users", JSON.stringify(users));

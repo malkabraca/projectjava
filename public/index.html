@@ -138,10 +138,10 @@
             ></div>
           </div>
           <div id="propertiesList" class="d-none">
-            <div style="border-bottom: 2px solid #0d0d0d">
+            <div style="border-bottom: 2px solid #0d0d0d" id="border-bottom-list">
               <li class="list-group-item">
                 <div class="row">
-                  <div class="col-md-2">
+                  <div class="col-md-1">
                     <h5 class="card-title">no.</h5>
                   </div>
                   <div class="col-md-2">
@@ -196,10 +196,10 @@
         <div id="about-us" class="d-none">
           <p>about us</p>
         </div>
-         <!-- Add pic -->
+        <!-- Add pic -->
         <!-- <div id="add-pic" class="d-none">
         </div>  -->
-       <!-- Signup -->
+        <!-- Signup -->
         <div id="signup-page" class="d-none">
           <h3 style="text-align: center">Sign up</h3>
           <form class="row g-3" onsubmit="event.preventDefault()">
@@ -461,7 +461,11 @@
               <label for="input-last-name" class="form-label red-asterik"
                 >Last Name</label
               >
-              <input type="text" class="form-control" id="profile-input-last-name" />
+              <input
+                type="text"
+                class="form-control"
+                id="profile-input-last-name"
+              />
             </div>
             <div
               class="alert alert-danger d-none"
@@ -552,7 +556,11 @@
             </div>
             <div class="col-md-6">
               <label for="input-phone" class="form-label">Phone</label>
-              <input type="text" class="form-control" id="profile-input-phone" />
+              <input
+                type="text"
+                class="form-control"
+                id="profile-input-phone"
+              />
             </div>
             <div
               class="alert alert-danger d-none"
@@ -625,7 +633,7 @@
                 disabled="true"
                 id="profile-btn"
               >
-              Update
+                Update
               </button>
             </div>
             <div class="col-12">
@@ -676,92 +684,8 @@
             <button class="btn btn-primary" id="login-btn">Submit</button>
           </form>
         </div>
-           <div
-            class="popup-wrapper d-flex justify-content-center align-items-center d-none"
-            id="editPropertiesPopup"
-          >
-            <div class="popup-div" id="editPropertiesPopupChild">
-              <div class="card">
-                <img
-                  src=""
-                  class="card-img-top"
-                  alt=""
-                  id="editPropertiesPopupImgDisplay"
-                />
-                <div class="card-body">
-                  <h5 class="card-title">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupName"
-                        placeholder="Name"
-                      />
-                      <label for="editPropertiesPopupName">Name</label>
-                    </div>
-                  </h5>
-                  <div class="card-text">
-                    <div class="form-floating">
-                      <textarea
-                        class="form-control"
-                        placeholder="description"
-                        id="editPropertiesPopupDescription"
-                      ></textarea>
-                      <label for="editPropertiesPopupDescription"
-                        >Description</label
-                      >
-                    </div>
-                  </div>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupPrice"
-                        placeholder="Price"
-                      />
-                      <label for="editPropertiesPopupPrice">Price</label>
-                    </div>
-                  </li>
-                  <li class="list-group-item">
-                    <div class="form-floating mb-3">
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="editPropertiesPopupImg"
-                        placeholder="Img"
-                      />
-                      <label for="editPropertiesPopupImg">Img</label>
-                    </div>
-                  </li>
-                </ul>
-                <div class="card-body">
-                  <button
-                    type="button"
-                    class="btn btn-success"
-                    id="editPropertiesPopupSaveBtn"
-                  >
-                    <i class="bi bi-check-circle-fill"></i> Save
-                  </button>
-                  <button
-                    type="button"
-                    class="btn btn-danger"
-                    id="editPropertiesPopupCancelBtn"
-                  >
-                    <i
-                      class="bi bi-x-circle-fill"
-                      id="editPropertiesPopupCancelBtnIcon"
-                    ></i>
-                    Cancel
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- popup -->
-          <div
+        <!-- popup -->
+        <div
           class="popup-wrapper d-flex justify-content-center align-items-center d-none"
           id="editPropertiesPopup"
         >
@@ -778,23 +702,114 @@
                   <div class="form-floating mb-3">
                     <input
                       type="text"
-                      class="form-control"
-                      id="editPropertiesPopupName"
-                      placeholder="Name"
+                      class="form-control popup-string"
+                      id="editPropertiesPopupTitle"
+                      placeholder="title"
                     />
-                    <label for="editPropertiesPopupName">Name</label>
+                    <label for="editPropertiesPopupTitle">Title</label>
                   </div>
+                  <div
+                  class="alert alert-danger d-none"
+                  role="alert"
+                  id="alert-title"
+                >
+                Title details should contain at least 2 characters, letters and
+                  numbers only
+                </div>
                 </h5>
                 <div class="card-text">
-                  <div class="form-floating">
+                  <div class="form-floating popup-string">
+                    <input
+                      class="form-control"
+                      placeholder="subtitle"
+                      id="editPropertiesPopupSubtitle"
+                    ></input>
+                    <label for="editPropertiesPopupDescription">
+                      Subtitle</label
+                    >
+                    <div
+                    class="alert alert-danger d-none"
+                    role="alert"
+                    id="alert-subtitle"
+                  >
+                  Subtitle details should contain at least 2 characters, letters and
+                    numbers only
+                  </div>
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div class="form-floating popup-string">
                     <textarea
                       class="form-control"
                       placeholder="description"
                       id="editPropertiesPopupDescription"
                     ></textarea>
                     <label for="editPropertiesPopupDescription"
-                      >Description</label
+                      >Description</label>
+                      <div
+                      class="alert alert-danger d-none"
+                      role="alert"
+                      id="alert-description"
                     >
+                    Description details should contain at least 2 characters, letters and
+                      numbers only
+                    </div>
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div class="form-floating">
+                    <input
+                      class="form-control"
+                      placeholder="price"
+                      id="editPropertiesPopupSubPrice"
+                    ></input>
+                    <label for="editPropertiesPopupDescription">Price</label>
+                    <div
+                    class="alert alert-danger d-none"
+                    role="alert"
+                    id="alert-price"
+                  >
+                  Price details should contain at least 2 characters, letters and
+                    numbers only
+                  </div>
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div class="form-floating">
+                    <input
+                      class="form-control popup-string"
+                      placeholder="credit"
+                      id="editPropertiesPopupCredit"
+                    ></input>
+                    <label for="editPropertiesPopupDescription">Credit</label>
+                    <div
+                    class="alert alert-danger d-none"
+                    role="alert"
+                    id="alert-credit"
+                  >
+                  Credit details should contain at least 2 characters, letters and
+                    numbers only
+                  </div>
+                  </div>
+                </div>
+
+                <div class="card-text">
+                  <div class="form-floating">
+                    <input
+                      class="form-control"
+                      placeholder="createdAt"
+                      id="editPropertiesPopupCreatedAt"
+                    ></input>
+                    <label for="editPropertiesPopupDescription"
+                      >CreatedAt</label>
+                      <div
+                    class="alert alert-danger d-none"
+                    role="alert"
+                    id="alert-CreatedAt"
+                  >
+                  CreatedAt details should contain at least 2 characters, letters and
+                    numbers only
+                  </div>
                   </div>
                 </div>
               </div>
@@ -804,21 +819,18 @@
                     <input
                       type="text"
                       class="form-control"
-                      id="editPropertiesPopupPrice"
-                      placeholder="Price"
+                      id="editPropertiesPopupImgUrl"
+                      placeholder="imgUrl"
                     />
-                    <label for="editPropertiesPopupPrice">Price</label>
+                    <label for="editPropertiesPopupImg">imgUrl</label>
+                    <div
+                    class="alert alert-danger d-none"
+                    role="alert"
+                    id="alert-imgUrl"
+                  >
+                  imgUrl details should contain at least 2 characters, letters and
+                    numbers only
                   </div>
-                </li>
-                <li class="list-group-item">
-                  <div class="form-floating mb-3">
-                    <input
-                      type="text"
-                      class="form-control"
-                      id="editPropertiesPopupImg"
-                      placeholder="Img"
-                    />
-                    <label for="editPropertiesPopupImg">Img</label>
                   </div>
                 </li>
               </ul>
@@ -845,10 +857,12 @@
             </div>
           </div>
         </div>
-          <!-- 404 Page not found Page -->
-          <div id="page-not-found-page" class="d-none">
-            <div id="click-here-home-page"><a href="#"> Click here go to home page...</a></div>
+        <!-- 404 Page not found Page -->
+        <div id="page-not-found-page" class="d-none">
+          <div id="click-here-home-page">
+            <a href="#"> Click here go to home page...</a>
           </div>
+        </div>
       </main>
 
       <footer class="border-top pt-3 d-flex justify-content-center">

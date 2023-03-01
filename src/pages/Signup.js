@@ -43,10 +43,6 @@ const checkIfPasswordIsSame = () => {
     document.getElementById("none-same-password").classList.remove("d-block");
   } else {
     document.getElementById("none-same-password").classList.remove("d-none");
-    // console.log("inside check");
-    // console.log(inputPassword.value);
-    // console.log("after first");
-    // console.log(inputRePassword.value);
     document.getElementById("none-same-password").classList.add("d-block");
     checkPasswordSame = false;
   }
@@ -109,26 +105,7 @@ inputRePassword.addEventListener("input", () => {
 inputPhoneNumber.addEventListener("input", () => {
   checkPhoneNumber();
 });
-/* 
-function checkStrings(elements) {
-  for (var i = 0; i < elements.length; i++) {
-    console.log("in");
-    console.log("element", i, elements[i]);
-    elements[i].addEventListener("input", () => {
-      checkStringInput();
-    });
-  } 
-}*/
-/* 
-inputStrings.addEventListener("input", () => {
-  for (var i = 0; i < inputStrings.length; i++) {
-    alert("in");
-    alert(inputStrings[i]);
-    inputStrings[i].addEventListener("input", () => {
-      checkStringInput();
-    });
-  }
-}); */
+
 for (var i = 0; i < inputStrings.length; i++) {
   inputStrings[i].addEventListener("input", () => {
     checkStringInput();
@@ -249,13 +226,6 @@ const checkStringInput = () => {
       errorInputRules = true;
       //the text is not ok
       inputStrings[i].classList.add("is-invalid");
-      /* 
-      document
-        .getElementsByClassName("sign-alert-str")
-        .classList.remove("d-none"); */
-      // document.querySelector(".sign-alert-str").innerHTML +=
-      // errorArr.join("<br>");
-      //lastNameOk = false;
     }
   }
   if (errorInputRules === true) {
@@ -280,8 +250,6 @@ const checkPhoneNumber = () => {
     //the text is not ok
     inputPhoneNumber.classList.add("is-invalid");
     document.getElementById("signup-alert-phone").classList.remove("d-none");
-    // document.getElementById("signup-alert-email").innerHTML +=
-    // errorArr.join("<br>");
     phoneOk = false;
   }
   checkIfCanEnableBtn();

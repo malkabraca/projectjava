@@ -23,8 +23,8 @@ class Property {
     this.description = description;
     this.price = price;
     this.Credit = credit;
-    this.imgUrl = imgUrl;
     this.createdAt = createdAt;
+    this.imgUrl = imgUrl;
   }
 }
 export default Property;
