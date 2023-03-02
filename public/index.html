@@ -15,13 +15,13 @@
       integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
       crossorigin="anonymous"
     ></script>
-    <link rel="shortcut icon" href="./assets/imgs/camera.PNG" />
+    <link rel="shortcut icon" href="./assets/imgs/logo.png" />
     <link rel="stylesheet" href="./index.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
     />
-    <title>pic-Up</title>
+    <title>Gallery</title>
   </head>
 
   <body>
@@ -91,6 +91,9 @@
         <!-- Home page -->
         <div id="home-page" class="d-block">
           <h1>Home page</h1>
+          <h4>
+            We believe that a picture is not only worth a thousand words, but creates so many feelings, shapes the character of the space in which it is located, creates an impression, becomes part of the DNA of the place and raises information, associations that stimulate our imagination and our emotional world.
+          </h4>
           <div class="d-flex justify-content-between mb-2">
             <div>
               <button type="button" class="btn btn-info" id="homeDisplayList">
@@ -191,14 +194,14 @@
             </div>
           </div>
         </div>
-
         <!--About-->
         <div id="about-us" class="d-none">
+          <div class="container">
+
+          </div>
+          
           <p>about us</p>
         </div>
-        <!-- Add pic -->
-        <!-- <div id="add-pic" class="d-none">
-        </div>  -->
         <!-- Signup -->
         <div id="signup-page" class="d-none">
           <h3 style="text-align: center">Sign up</h3>
@@ -642,48 +645,7 @@
           </form>
           <div id="toast"></div>
         </div>
-        <!-- login page -->
-        <div id="login-page" class="d-none">
-          <h1>Login page</h1>
-          <form onsubmit="event.preventDefault()">
-            <div class="form-floating mb-3">
-              <input
-                type="email"
-                class="form-control"
-                id="login-input-email"
-                placeholder="name@example.com"
-              />
-              <label for="login-input-email">Email address</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="login-alert-email"
-            >
-              You have to put your email
-            </div>
-            <div class="form-floating">
-              <input
-                type="password"
-                class="form-control"
-                id="login-input-password"
-                placeholder="Password"
-              />
-              <label for="login-input-password">Password</label>
-            </div>
-            <div
-              class="alert alert-danger d-none"
-              role="alert"
-              id="login-alert-password"
-            >
-              You must use uppercase letter, lowercase letter, numbers, special
-              sign
-            </div>
-            <div>Not registered yet?</div>
-            <div id="click-here-login"><a href="#"> Click here...</a></div>
-            <button class="btn btn-primary" id="login-btn">Submit</button>
-          </form>
-        </div>
+
         <!-- popup -->
         <div
           class="popup-wrapper d-flex justify-content-center align-items-center d-none"
