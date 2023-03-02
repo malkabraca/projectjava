@@ -13,7 +13,7 @@ const createData = () => {
       8.12,
       `Groge w Bosh credit`,
       "8.12 createdAt",
-       "https://litb-cgis.rightinthebox.com/images/640x640/202103/bps/product/inc/khwcno1616755327092.jpg"
+       "https://images.pexels.com/photos/1535162/pexels-photo-1535162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ),
     new Property(
       id++,
@@ -23,7 +23,7 @@ const createData = () => {
       8.12,
       `Groge w Bosh credit`,
       "8.12 createdAt",
-       "https://images.squarespace-cdn.com/content/v1/5a7c0544d74cffa3a6ce66b3/1608482750877-VQE2XI09QEHZZIVGLTJH/%D7%A0%D7%99%D7%A8+%D7%A8%D7%95%D7%99%D7%98%D7%9E%D7%9F+%D7%91%D7%A9%D7%95%D7%95%D7%99%D7%A5+-+%D7%9C%D7%A6%D7%99%D7%93%D7%99+%D7%94%D7%AA%D7%9E%D7%95%D7%A0%D7%AA+%D7%A0%D7%95%D7%A3+%D7%A9%D7%A6%D7%99%D7%9C%D7%9E%D7%AA%D7%99+%D7%91%D7%90%D7%95%D7%AA%D7%95+%D7%9E%D7%A7%D7%95%D7%9D.jpg?format=2500wg"
+      "https://images.pexels.com/photos/1366919/pexels-photo-1366919.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ),
     new Property(
       id++,
@@ -33,7 +33,7 @@ const createData = () => {
       8.12,
       `Groge w Bosh credit`,
       "8.12 createdAt",
-       "https://litb-cgis.rightinthebox.com/images/640x640/202103/bps/product/inc/khwcno1616755327092.jpg"
+       "https://images.pexels.com/photos/8138726/pexels-photo-8138726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ),
   ];
   return propertiesArr;

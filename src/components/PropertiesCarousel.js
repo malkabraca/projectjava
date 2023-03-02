@@ -111,17 +111,17 @@ const initializeBtns = () => {
   });
 };
 
-const createItem = (name, img,) => {
+const createItem = (title, img,) => {
   //opacity-0 hide image
   return `
-      <img src="${img}" alt="${name}" class="opacity-0" />
+      <img src="${img}" alt="${title}" class="opacity-0" />
      `;
 };
 
 const createCarousel = () => {
   let innerStr = "";
   for (let property of propertiesArr) {
-    innerStr += createItem(property.name, property.imgUrl); // append, string concatenation
+    innerStr += createItem(property.title, property.imgUrl); // append, string concatenation
   }
   carouselDiv.innerHTML = innerStr;
   //show the first img

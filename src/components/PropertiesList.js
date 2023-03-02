@@ -3,17 +3,20 @@ let listDiv;
 let isAdmin;
 let deleteProperty;
 let showPopup;
+let showPopupTwo;
 //this function will transfer data from homepage to this page
 const initialPropertiesList = (
   propertiesArrFromHomePage,
   isAdminParam,
   deletePropertyFromHomePage,
-  showPopupFromHomePage
+  showPopupFromHomePage,
+  showPopupTwoFromHomePage
 ) => {
   listDiv = document.getElementById("home-page-properties-list");
   isAdmin = isAdminParam;
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
+  showPopupTwo = showPopupTwoFromHomePage
   updatePropertiesList(propertiesArrFromHomePage);
 };
 
@@ -27,7 +30,7 @@ const updatePropertiesList = (propertiesArrFromHomePage) => {
   createList();
 };
 
-const createItem = (title, imgUrl,credit, id) => {
+const createItem = (title, imgUrl, credit, id) => {
   const adminBtns = `
   <div class="col-md-1">
   <button type="button" class="btn btn btn-light w-100" id="propertyListEditBtn-${id}">
@@ -44,7 +47,7 @@ const createItem = (title, imgUrl,credit, id) => {
   <li class="list-group-item">
     <div class="row">
         <div class="col-md-2">
-        <img src="${imgUrl}" class="img-fluid" alt="${title}"style="margin: 1.5rem; width: 8rem;
+        <img src="${imgUrl}" class="img-fluid" id="propertyListImgBtn-${id}" alt="${title}"style="margin: 1.5rem; width: 8rem;
         height: 8rem;"/>
         </div>
         <div class="col-md-6">
@@ -81,6 +84,9 @@ const handleDeleteBtnClick = (ev) => {
 const handleEditBtnClick = (ev) => {
   showPopup(getIdFromClick(ev));
 };
+const handleImgBtnClick = (ev) => {
+  showPopupTwo(getIdFromClick(ev));
+};
 
 const clearEventListeners = (idKeyword, handleFunction) => {
   //get all old btns
@@ -98,13 +104,15 @@ const createList = () => {
   //clear event listeners for edit btns
   clearEventListeners("propertyListEditBtn", handleEditBtnClick);
 
+  clearEventListeners("propertyListImgBtn", handleImgBtnClick);
+
+
   //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
       property.title,
       property.imgUrl,
       property.credit,
-      property.imgUrl,
       property.id
     );
   }
@@ -113,6 +121,8 @@ const createList = () => {
   createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
   // add event listeners for edit btns
   createBtnEventListener("propertyListEditBtn", handleEditBtnClick);
+  
+  createBtnEventListener("propertyListImgBtn", handleImgBtnClick);
 };
 
 //Creates event listener for the delete buttons

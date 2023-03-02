@@ -30,7 +30,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid">
             <a class="navbar-brand" href="#" id="nav-home-link"
-              ><img src="./assets/imgs/logo.PNG" alt="our logo-camera picture"
+              ><img src="./assets/imgs/logo.PNG" alt="our logo-camera picture"  style=" width: 3.5rem; height: 3.5rem;"
             /></a>
             <button
               class="navbar-toggler"
@@ -691,7 +691,7 @@
         >
           <div class="popup-div" id="editPropertiesPopupChild">
             <div class="card">
-              <h4>Edit</h4>
+              <h4 style="margin: auto;">Edit</h4>
               <img
                 src=""
                 class="card-img-top"
@@ -858,6 +858,118 @@
             </div>
           </div>
         </div>
+        <!-- popup2 -->
+        <div
+          class="popup-wrapper d-flex justify-content-center align-items-center d-none"
+          id="informationImgPopup"
+        >
+          <div class="popup-div" id="editPropertiesPopupChild">
+            <div class="card">
+              <h4 style="margin: auto;">informationImg</h4>
+              <img
+                src=""
+                class="card-img-top"
+                alt=""
+                id="informationImgPopupImgDisplay"
+                style=" width: 10rem; height: 10rem; margin: auto;"
+              />
+              <div class="card-body">
+                <h5 class="card-title">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control popup-string"
+                      id="informationImgPopupTitle"
+                      placeholder="title"
+                    />
+                    <label for="editPropertiesPopupTitle">Title</label>
+                  </div>
+                </h5>
+                <div class="card-text">
+                  <div class="form-floating popup-string">
+                    <input
+                      class="form-control"
+                      placeholder="subtitle"
+                      id="informationImgPopupSubtitle"
+                    ></input>
+                    <label for="editPropertiesPopupDescription">
+                      Subtitle</label
+                    >
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div class="form-floating popup-string">
+                    <textarea
+                      class="form-control"
+                      placeholder="description"
+                      id="informationImgPopupDescription"
+                    ></textarea>
+                    <label for="editPropertiesPopupDescription"
+                      >Description</label>
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div class="form-floating">
+                    <input
+                      class="form-control"
+                      placeholder="price"
+                      id="informationImgPopupSubPrice"
+                    ></input>
+                    <label for="editPropertiesPopupDescription">Price</label>
+                  </div>
+                </div>
+                <div class="card-text">
+                  <div class="form-floating">
+                    <input
+                      class="form-control popup-string"
+                      placeholder="credit"
+                      id="informationImgPopupCredit"
+                    ></input>
+                    <label for="editPropertiesPopupDescription">Credit</label>
+                  </div>
+                </div>
+
+                <div class="card-text">
+                  <div class="form-floating">
+                    <input
+                      class="form-control"
+                      placeholder="createdAt"
+                      id="informationImgPopupCreatedAt"
+                    ></input>
+                    <label for="editPropertiesPopupDescription"
+                      >CreatedAt</label>
+                  </div>
+                </div>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <div class="form-floating mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="informationImgPopupImgUrl"
+                      placeholder="imgUrl"
+                    />
+                    <label for="editPropertiesPopupImg">imgUrl</label>
+                  </div>
+                </li>
+              </ul>
+              <div class="card-body">
+                <button
+                  type="button"
+                  class="btn btn-danger"
+                  id="informationImgPopupCancelBtn"
+                >
+                  <i
+                    class="bi bi-x-circle-fill"
+                    id="informationImgPopupCancelBtnIcon"
+                  ></i>
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
         <!-- 404 Page not found Page -->
         <div id="page-not-found-page" class="d-none">
           <div id="click-here-home-page">
@@ -867,7 +979,7 @@
       </main>
 
       <footer class="border-top pt-3 d-flex justify-content-center">
-        <p>© Create by Ester Rosenfeld</p>
+        <p>© Create by Malki Goldaber</p>
       </footer>
 
       <script src="../src/app.js" type="module"></script>

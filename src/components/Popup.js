@@ -63,6 +63,10 @@ let creditOk = false;
 let createdAtOK  = false;
 let imgUrlOk = false;
 
+window.addEventListener("load", () => {
+  checkIfCanEnableBtn()
+});
+
 const checkIfCanEnableBtn = () => {
   PopupSaveBtn.disabled = !(
     titleOk &&

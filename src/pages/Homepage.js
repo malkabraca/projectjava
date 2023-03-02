@@ -11,6 +11,7 @@ import {
   updatePropertiesCarousel,
 } from "../components/PropertiesCarousel.js";
 import { initPopup } from "../components/Popup.js";
+import { initPopupInpor } from "../components/popup2.js";
 import checkIfAdmin from "../utils/checkIfAdmin.js";
 
 let propertiesArr, originalPropertiesArr;
@@ -36,8 +37,8 @@ window.addEventListener("load", () => {
   originalPropertiesArr = [...propertiesArr];
   isAdmin = checkIfAdmin();
   //passing propertiesArr to PropertiesGallery.js
-  initialPropertiesGallery(propertiesArr);
-  initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup);
+  initialPropertiesGallery(propertiesArr,showPopupTwo);
+  initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup,showPopupTwo);
   initialPropertiesCarousel(propertiesArr);
   initializeElements();
   initializeBtns();
@@ -138,10 +139,19 @@ const showPopup = (id) => {
   }
   initPopup(selectedProperty, editProperty);
 };
+const showPopupTwo = (id) => {
+  let selectedProperty = propertiesArr.find((item) => item.id === +id);
+  if (!selectedProperty) {
+    return;
+  }
+  initPopupInpor(selectedProperty, editProperty);
+};
 
 const showNewPopup = () => {
   initPopup(undefined, addNewProperty);
 };
+
+
 
 const addNewProperty = (newProperty) => {
   originalPropertiesArr = [...originalPropertiesArr, newProperty];
