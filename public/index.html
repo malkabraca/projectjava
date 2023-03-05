@@ -17,6 +17,7 @@
     ></script>
     <link rel="shortcut icon" href="./assets/imgs/logo.png" />
     <link rel="stylesheet" href="./index.css" />
+    <link rel="stylesheet" href="./toast.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"
@@ -197,10 +198,61 @@
         <!--About-->
         <div id="about-us" class="d-none">
           <div class="container">
+            <h2>Here you will find an explanatio of how the app works</h2>
+            <br>
+            <h4>
+              On the site there are 3 options for displaying the photos:
+              <br>
+              1. Gallery
+              <br>
+              2. List
+              <br>
+              3. Carousel
+            </h4>
+            <div class="card mb-3" style="max-width:100vw;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/public/assets/imgs/carocl.png" class="img-fluid rounded-start" alt="carocl">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h2 class="card-title">Carousel</h2>
+                    <p class="card-text">In the carousel you can see the photo gallery.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3" style="max-width: 100vw;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/public/assets/imgs/galleri.png" class="img-fluid rounded-start" alt="galleri">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h2 class="card-title">Gallery</h2>
+                    <p class="card-text">In the gallery view you can see the gallery images and the price of the image and get complete information for the image by clicking on the desired image</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card mb-3" style="max-width: 100vw;">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="/public/assets/imgs/list.png" class="img-fluid rounded-start" alt="list">
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h2 class="card-title">List</h2>
+                    <p class="card-text">In list view you can see the gallery photos, price, credit, etc.
+                      In addition, the admin user can edit the photos and delete photos. By clicking on the requested photo, you can get all the details of the photo</p>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
 
           </div>
           
-          <p>about us</p>
         </div>
         <!-- Signup -->
         <div id="signup-page" class="d-none">
@@ -397,7 +449,6 @@
               <button type="submit" class="btn btn-danger">Cancel</button>
             </div>
           </form>
-          <div id="toast"></div>
         </div>
         <!-- login page -->
         <div id="login-page" class="d-none">
@@ -443,13 +494,12 @@
         </div>
         <!--Profile Page-->
         <div id="profile-page" class="d-none">
-          <p>addpic</p>
           <form class="row g-3" onsubmit="event.preventDefault()">
-            <h6>name</h6>
+            <h1>Profile</h1>
+            <h6>Name</h6>
             <div class="col-md-6">
               <label for="form-label" class="form-label red-asterik"
-                >Name</label
-              >
+                >Name</label>
               <input type="text" class="form-control" id="profile-input-name" />
             </div>
             <div
@@ -478,7 +528,6 @@
               The name must start with a capital letter This field can only be
               used with letters and numbers,
             </div>
-            can
             <h6>Address</h6>
             <div class="col-md-4">
               <label for="input-state" class="form-label">State</label>
@@ -640,10 +689,9 @@
               </button>
             </div>
             <div class="col-12">
-              <button type="submit" class="btn btn-danger">Cancel</button>
+              <button type="submit" class="btn btn-danger" id="butCancelProfile">Cancel</button>
             </div>
           </form>
-          <div id="toast"></div>
         </div>
 
         <!-- popup -->

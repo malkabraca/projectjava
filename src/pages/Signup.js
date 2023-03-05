@@ -76,10 +76,7 @@ window.addEventListener("load", () => {
   if (inputPhoneNumber.value !== "") {
     checkPhoneNumber();
   }
-  /* 
-    if (inputStrings[i].value !== "") {
-    checkStringInput();
-  } */
+
 });
 
 inputName.addEventListener("input", () => {
@@ -114,7 +111,6 @@ for (var i = 0; i < inputStrings.length; i++) {
 
 const checkNameInput = () => {
   let errorArr = validateName(inputName.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     inputName.classList.remove("is-invalid");
@@ -124,8 +120,6 @@ const checkNameInput = () => {
     //the text is not ok
     inputName.classList.add("is-invalid");
     document.getElementById("signup-alert-name").classList.remove("d-none");
-    //document.getElementById("signup-alert-name").innerHTML +=
-    // errorArr.join("<br>");
     nameOk = false;
   }
   checkIfCanEnableBtn();
@@ -145,8 +139,6 @@ const checkLastNameInput = () => {
     document
       .getElementById("signup-alert-last-name")
       .classList.remove("d-none");
-    // document.getElementById("signup-alert-last-name").innerHTML +=
-    // errorArr.join("<br>");
     lastNameOk = false;
   }
   checkIfCanEnableBtn();
@@ -163,8 +155,6 @@ const checkEmailInput = () => {
     //the text is not ok
     inputEmail.classList.add("is-invalid");
     document.getElementById("signup-alert-email").classList.remove("d-none");
-    // document.getElementById("signup-alert-email").innerHTML +=
-    // errorArr.join("<br>");
     emailOk = false;
   }
   checkIfCanEnableBtn();
@@ -183,8 +173,7 @@ const checkPasswordInput = () => {
     document
       .getElementById("signup-alert-password1")
       .classList.remove("d-none");
-    //document.getElementById("signup-alert-password1").innerHTML +=
-    // errorArr.join("<br>");
+
     passwordOk = false;
   }
   checkIfCanEnableBtn();
@@ -203,8 +192,7 @@ const checkRePasswordInput = () => {
     document
       .getElementById("signup-alert-repassword2")
       .classList.remove("d-none");
-    //document.getElementById("signup-alert-repassword2").innerHTML +=
-    //errorArr.join("<br>");
+  
     rePasswordOk = false;
   }
   checkIfCanEnableBtn();

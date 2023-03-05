@@ -8,13 +8,14 @@ import validateString from "../validation/validateString.js";
 import User from "../models/User.js";
 import showToast from "../utils/Toast.js";
 
+
 const inputName = document.getElementById("profile-input-name");
 const inputLastName = document.getElementById("profile-input-last-name");
 const inputEmail = document.getElementById("profile-input-email");
 const inputPassword = document.getElementById("profile-input-password1");
 const inputRePassword = document.getElementById("profile-input-password2");
 const inputStrings = document.getElementsByClassName("inp-string");
-const inputPhoneNumber = document.getElementById("profile-alert-phone");
+const inputPhoneNumber = document.getElementById("profile-input-phone");
 const inputState = document.getElementById("profile-input-state");
 const inputCountry = document.getElementById("profile-input-country");
 const inputCity = document.getElementById("profile-input-city");
@@ -23,6 +24,9 @@ const inputHouseNumber = document.getElementById("profile-input-house-number");
 const inputZipCode = document.getElementById("profile-input-zip");
 const btnBusinessClient = document.getElementById("profile-business-client");
 const btnProfile = document.querySelector("#profile-btn");
+const butCancelProfile = document.getElementById("butCancelProfile");
+
+
 /*
 Initializing the boolean variables, which are required for the successful input.
 The fields which must be filled are set in default as false, and the fields which can stay empty are set as true.
@@ -59,7 +63,7 @@ window.addEventListener("load", () => {
             inputPassword.value = user.password;
             inputRePassword.value = user.password;
         }
-    }
+    };
     const checkIfPasswordIsSame = () => {
         if (inputPassword.value === inputRePassword.value) {
           checkPasswordSame = true;
@@ -98,6 +102,7 @@ window.addEventListener("load", () => {
       if (inputStrings.length !== 0) {
         checkStringInput(inputStrings);
       }
+      console.log(inputPhoneNumber);
       if (inputPhoneNumber.value !== "") {
         checkPhoneNumber();
       }
@@ -261,6 +266,9 @@ window.addEventListener("load", () => {
         }
         checkIfCanEnableBtn();
     };
+    butCancelProfile.addEventListener("click", () => {
+        handlePageChange(PAGES.HOME);
+      });
 
     const checkIfCanEnableBtn = () => {
         btnProfile.disabled = !(
