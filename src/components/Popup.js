@@ -3,6 +3,8 @@ import getNextId from "../utils/getNextId.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import validateUrl from "../validation/validateUrl.js";
+import showToast from "../utils/Toast.js";
+
 
 let selectedProperty, editProperty;
 const editPropertiesPopupImgDisplay = document.getElementById(
@@ -44,9 +46,6 @@ window.addEventListener("load", () => {
   checkIfCanEnableBtn();
 });
 const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
-  /*
-    set data from selectedProperty to html
-    */
   if (selectedPropertyFromHomePage) {
     selectedProperty = selectedPropertyFromHomePage;
     titleOk = true;
@@ -263,10 +262,11 @@ window.addEventListener("load", () => {
       selectedProperty.subtitle = editPropertiesPopupSubtitle.value;
       selectedProperty.description = editPropertiesPopupDescription.value;
       selectedProperty.price = editPropertiesPopupPrice.value;
-      selectedProperty.Credit = editPropertiesPopupCredit.value;
+      selectedProperty.credit = editPropertiesPopupCredit.value;
       selectedProperty.createdAt = editPropertiesPopupCreatedAt.value;
       selectedProperty.imgUrl = editPropertiesPopupImg.value;
       editProperty(selectedProperty);
+      showToast("Saved");
       hidePopup();
     });
   editPropertiesPopupImg.addEventListener("input", () => {

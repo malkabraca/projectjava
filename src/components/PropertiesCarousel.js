@@ -56,10 +56,6 @@ const initializeBtns = () => {
       },
       { once: true }
     );
-    // showIdx++;
-    // if (showIdx >= propertiesArr.length) {
-    //   showIdx = 0;
-    // }
     showIdx = prevIdx;
   });
   document.getElementById("next-carusel-btn").addEventListener("click", () => {
@@ -103,10 +99,7 @@ const initializeBtns = () => {
       },
       { once: true }
     );
-    // showIdx++;
-    // if (showIdx >= propertiesArr.length) {
-    //   showIdx = 0;
-    // }
+  
     showIdx = nextIdx;
   });
 };

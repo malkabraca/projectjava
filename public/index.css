@@ -48,9 +48,6 @@
   width: 100%;
 }
 
-/* .responsive-mt {
-  margin-top: 0.9rem;
-} */
 @media (max-width: 991px) {
   .responsive-mt {
     margin-top: 0.9rem;
@@ -76,4 +73,7 @@
   width: 10rem;
   height: 10rem;
   margin: auto;
+}
+h1{
+  margin:auto;
 }

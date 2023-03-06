@@ -30,9 +30,7 @@ const informationImgPopupImg = document.getElementById(
 const informationImgPopup = document.getElementById("informationImgPopup");
 
 const initPopupInpor= (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
-  /*
-    set data from selectedProperty to html
-    */
+
   if (selectedPropertyFromHomePage) {
     selectedProperty = selectedPropertyFromHomePage;
   } else {

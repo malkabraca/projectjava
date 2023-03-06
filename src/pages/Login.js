@@ -23,12 +23,9 @@ loginEmailInput.addEventListener("input", () => {
     //the text is not ok
     loginEmailInput.classList.add("is-invalid");
     document.getElementById("login-alert-email").classList.remove("d-none");
-    // document.getElementById("login-alert-email").innerHTML +=
-    // errorArr.join("<br>");
-    //emailOk = false;
   }
 });
-//checkIfCanEnableBtn();
+
 
 loginPasswordInput.addEventListener("input", () => {
   let errorArr = validatePassword(loginPasswordInput.value);
@@ -41,11 +38,7 @@ loginPasswordInput.addEventListener("input", () => {
     //the text is not ok
     loginPasswordInput.classList.add("is-invalid");
     document.getElementById("login-alert-password").classList.remove("d-none");
-    //document.getElementById("login-alert-password1").innerHTML +=
-    // errorArr.join("<br>");
-    // passwordOk = false;
   }
-  //checkIfCanEnableBtn();
 });
 
 loginBtn.addEventListener("click", () => {
@@ -57,7 +50,6 @@ loginBtn.addEventListener("click", () => {
   }
   let users = JSON.parse(localStorage.getItem("users"));
   if (!users) {
-    //users === null
     return;
   }
   let user = users.find(
@@ -66,7 +58,6 @@ loginBtn.addEventListener("click", () => {
       item.password === loginPasswordInput.value
   );
   if (!user) {
-    //console.log("invalid email and/or password");
     return;
   }
   //remember who connected
@@ -79,6 +70,5 @@ loginBtn.addEventListener("click", () => {
       isAdmin: user.btnBusinessClient,
     })
   );
-  // handlePageChange(PAGES.HOME);
   location.reload(); // refresh the page
 });

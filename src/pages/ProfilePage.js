@@ -102,7 +102,6 @@ window.addEventListener("load", () => {
       if (inputStrings.length !== 0) {
         checkStringInput(inputStrings);
       }
-      console.log(inputPhoneNumber);
       if (inputPhoneNumber.value !== "") {
         checkPhoneNumber();
       }

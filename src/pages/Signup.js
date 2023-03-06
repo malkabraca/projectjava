@@ -23,10 +23,8 @@ const inputStreet = document.getElementById("signup-input-street");
 const inputHouseNumber = document.getElementById("signup-input-house-number");
 const inputZipCode = document.getElementById("signup-input-zip");
 const btnBusinessClient = document.getElementById("business-client");
-/*
-Initializing the boolean variables, which are required for the successful input.
-The fields which must be filled are set in default as false, and the fields which can stay empty are set as true.
-*/
+
+
 let nameOk = false;
 let lastNameOk = false;
 let emailOk = false;
@@ -47,8 +45,7 @@ const checkIfPasswordIsSame = () => {
     checkPasswordSame = false;
   }
   console.log(checkPasswordSame);
-}; /* 
-checkIfPasswordIsSame(); */
+}; 
 
 window.addEventListener("load", () => {
   //when page loaded
@@ -208,8 +205,6 @@ const checkStringInput = () => {
     if (errorArr.length === 0 || inputStrings[i].value === "") {
       //the text is ok
       inputStrings[i].classList.remove("is-invalid");
-      /*  document.getElementsByClassName("sign-alert-str").classList.add("d-none"); */
-      //choosefieldOK = true;
     } else {
       errorInputRules = true;
       //the text is not ok
@@ -294,15 +289,7 @@ btnRegister.addEventListener("click", () => {
   if (!users) {
     //the first user
     users = [newUser];
-    // let user = new User(inputName.value, inputEmail.value, inputPassword.value);
-    // users = [user]
     localStorage.setItem("users", JSON.stringify(users));
-    /*
-      JSON.stringify(users) - convert array of objects to string
-      localStorage.setItem - store the json string to localStorage with 
-        key users 
-        and value users as json string
-    */
   } else {
     //we have users
     users = JSON.parse(users); // convert from string to array of objects
