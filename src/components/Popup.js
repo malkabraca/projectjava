@@ -3,8 +3,6 @@ import getNextId from "../utils/getNextId.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import validateUrl from "../validation/validateUrl.js";
-import validateDete from "../validation/validateDete.js";
-
 
 let selectedProperty, editProperty;
 const editPropertiesPopupImgDisplay = document.getElementById(
@@ -34,14 +32,49 @@ const editPropertiesPopupImg = document.getElementById(
 const editPropertiesPopup = document.getElementById("editPropertiesPopup");
 const PopupSaveBtn = document.getElementById("editPropertiesPopupSaveBtn");
 
+let titleOk = false;
+let subtitleOk = false;
+let descriptionOk = false;
+let priceOk = false;
+let creditOk = false;
+let createdAtOK = false;
+let imgUrlOk = false;
+
+window.addEventListener("load", () => {
+  checkIfCanEnableBtn();
+});
 const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   /*
     set data from selectedProperty to html
     */
   if (selectedPropertyFromHomePage) {
     selectedProperty = selectedPropertyFromHomePage;
+    titleOk = true;
+    subtitleOk = true;
+    descriptionOk = true;
+    priceOk = true;
+    creditOk = true;
+    createdAtOK = true;
+    imgUrlOk = true;
   } else {
-    selectedProperty = new Property(getNextId(), "", "", "", "","","","","");
+    selectedProperty = new Property(
+      getNextId(),
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    );
+    titleOk = false;
+    subtitleOk = false;
+    descriptionOk = false;
+    priceOk = false;
+    creditOk = false;
+    createdAtOK = false;
+    imgUrlOk = false;
   }
   editProperty = editPropertyFromHomePage;
   editPropertiesPopupImgDisplay.src = selectedProperty.imgUrl;
@@ -52,20 +85,10 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   editPropertiesPopupCredit.value = selectedProperty.credit;
   editPropertiesPopupCreatedAt.value = selectedProperty.createdAt;
   editPropertiesPopupImg.value = selectedProperty.imgUrl;
+  checkIfCanEnableBtn();
   showPopup();
 };
 
-let titleOk = false;
-let subtitleOk = false;
-let descriptionOk = false;
-let priceOk = false;
-let creditOk = false;
-let createdAtOK  = false;
-let imgUrlOk = false;
-
-window.addEventListener("load", () => {
-  checkIfCanEnableBtn()
-});
 
 const checkIfCanEnableBtn = () => {
   PopupSaveBtn.disabled = !(
@@ -88,20 +111,20 @@ editPropertiesPopupDescription.addEventListener("input", () => {
   checkDescriptionString();
 });
 editPropertiesPopupPrice.addEventListener("input", () => {
-  checkPriceNumber ();
+  checkPriceNumber();
 });
 editPropertiesPopupCredit.addEventListener("input", () => {
-  checkCreditString ();
+  checkCreditString();
 });
 editPropertiesPopupCreatedAt.addEventListener("input", () => {
-  checkCreatedAtNumber ();
+  checkCreatedAtNumber();
 });
 editPropertiesPopupImg.addEventListener("input", () => {
-  checkImgUrlOkUrl ();
+  checkImgUrlOkUrl();
 });
 const checkImgUrlOkUrl = () => {
   let errorArr = validateUrl(editPropertiesPopupImg.value);
-  if (errorArr.length === 0 || editPropertiesPopupImg  === "") {
+  if (errorArr.length === 0 || editPropertiesPopupImg === "") {
     editPropertiesPopupImg.classList.remove("is-invalid");
     document.getElementById("alert-imgUrl").classList.add("d-none");
     imgUrlOk = true;
@@ -115,7 +138,7 @@ const checkImgUrlOkUrl = () => {
 };
 const checkCreatedAtNumber = () => {
   let errorArr = validateNumber(editPropertiesPopupCreatedAt.value);
-  if (errorArr.length === 0 || editPropertiesPopupCreatedAt  === "") {
+  if (errorArr.length === 0 || editPropertiesPopupCreatedAt === "") {
     editPropertiesPopupCreatedAt.classList.remove("is-invalid");
     document.getElementById("alert-CreatedAt").classList.add("d-none");
     createdAtOK = true;
@@ -143,7 +166,7 @@ const checkCreditString = () => {
 };
 const checkPriceNumber = () => {
   let errorArr = validateNumber(editPropertiesPopupPrice.value);
-  if (errorArr.length === 0 || editPropertiesPopupPrice  === "") {
+  if (errorArr.length === 0 || editPropertiesPopupPrice === "") {
     editPropertiesPopupPrice.classList.remove("is-invalid");
     document.getElementById("alert-price").classList.add("d-none");
     priceOk = true;
@@ -157,7 +180,7 @@ const checkPriceNumber = () => {
 };
 const checkDescriptionString = () => {
   let errorArr = validateString(editPropertiesPopupDescription.value);
-  if (errorArr.length === 0 || editPropertiesPopupDescription  === "") {
+  if (errorArr.length === 0 || editPropertiesPopupDescription === "") {
     editPropertiesPopupDescription.classList.remove("is-invalid");
     document.getElementById("alert-description").classList.add("d-none");
     descriptionOk = true;
@@ -171,8 +194,8 @@ const checkDescriptionString = () => {
 };
 const checkSubtitleString = () => {
   let errorArr = validateString(editPropertiesPopupSubtitle.value);
-  if (errorArr.length === 0 || editPropertiesPopupSubtitle  === "") {
-    editPropertiesPopupSubtitle .classList.remove("is-invalid");
+  if (errorArr.length === 0 || editPropertiesPopupSubtitle === "") {
+    editPropertiesPopupSubtitle.classList.remove("is-invalid");
     document.getElementById("alert-subtitle").classList.add("d-none");
     subtitleOk = true;
   } else {
@@ -185,21 +208,19 @@ const checkSubtitleString = () => {
 };
 
 const checkTitleString = () => {
-  let errorArr = validateString(editPropertiesPopupTitle .value);
-  if (errorArr.length === 0 || editPropertiesPopupTitle  === "") {
-    editPropertiesPopupTitle .classList.remove("is-invalid");
+  let errorArr = validateString(editPropertiesPopupTitle.value);
+  if (errorArr.length === 0 || editPropertiesPopupTitle === "") {
+    editPropertiesPopupTitle.classList.remove("is-invalid");
     document.getElementById("alert-title").classList.add("d-none");
     titleOk = true;
   } else {
     //the text is not ok
-    editPropertiesPopupTitle .classList.add("is-invalid");
+    editPropertiesPopupTitle.classList.add("is-invalid");
     document.getElementById("alert-title").classList.remove("d-none");
     titleOk = false;
   }
   checkIfCanEnableBtn();
 };
-
-
 
 const showPopup = () => {
   editPropertiesPopup.classList.remove("d-none");
@@ -207,6 +228,20 @@ const showPopup = () => {
 
 const hidePopup = () => {
   editPropertiesPopup.classList.add("d-none");
+  document.getElementById("alert-title").classList.add("d-none");
+  document.getElementById("alert-subtitle").classList.add("d-none");
+  document.getElementById("alert-description").classList.add("d-none");
+  document.getElementById("alert-price").classList.add("d-none");
+  document.getElementById("alert-credit").classList.add("d-none");
+  document.getElementById("alert-CreatedAt").classList.add("d-none");
+  document.getElementById("alert-imgUrl").classList.add("d-none");
+  editPropertiesPopupImgDisplay.classList.remove("is-invalid");
+  editPropertiesPopupTitle.classList.remove("is-invalid");
+  editPropertiesPopupSubtitle.classList.remove("is-invalid");
+  editPropertiesPopupDescription.classList.remove("is-invalid");
+  editPropertiesPopupPrice.classList.remove("is-invalid");
+  editPropertiesPopupCredit.classList.remove("is-invalid");
+  editPropertiesPopupCreatedAt.classList.remove("is-invalid");
 };
 
 window.addEventListener("load", () => {
@@ -221,7 +256,6 @@ window.addEventListener("load", () => {
     hidePopup();
   });
 
-  
   document
     .getElementById("editPropertiesPopupSaveBtn")
     .addEventListener("click", () => {
@@ -230,9 +264,9 @@ window.addEventListener("load", () => {
       selectedProperty.description = editPropertiesPopupDescription.value;
       selectedProperty.price = editPropertiesPopupPrice.value;
       selectedProperty.Credit = editPropertiesPopupCredit.value;
-      selectedProperty.createdAt= editPropertiesPopupCreatedAt.value;
-     selectedProperty.imgUrl=editPropertiesPopupImg.value;
-     editProperty(selectedProperty);
+      selectedProperty.createdAt = editPropertiesPopupCreatedAt.value;
+      selectedProperty.imgUrl = editPropertiesPopupImg.value;
+      editProperty(selectedProperty);
       hidePopup();
     });
   editPropertiesPopupImg.addEventListener("input", () => {
