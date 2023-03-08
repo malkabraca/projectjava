@@ -5,4 +5,4 @@ const validateString = (value) => {
 };
 
 export default validateString;
-//[A-Za-z0-9\\s]{0,}$", "g";
+

@@ -24,7 +24,6 @@ const inputHouseNumber = document.getElementById("signup-input-house-number");
 const inputZipCode = document.getElementById("signup-input-zip");
 const btnBusinessClient = document.getElementById("business-client");
 
-
 let nameOk = false;
 let lastNameOk = false;
 let emailOk = false;
@@ -45,7 +44,7 @@ const checkIfPasswordIsSame = () => {
     checkPasswordSame = false;
   }
   console.log(checkPasswordSame);
-}; 
+};
 
 window.addEventListener("load", () => {
   //when page loaded
@@ -73,7 +72,6 @@ window.addEventListener("load", () => {
   if (inputPhoneNumber.value !== "") {
     checkPhoneNumber();
   }
-
 });
 
 inputName.addEventListener("input", () => {
@@ -189,7 +187,7 @@ const checkRePasswordInput = () => {
     document
       .getElementById("signup-alert-repassword2")
       .classList.remove("d-none");
-  
+
     rePasswordOk = false;
   }
   checkIfCanEnableBtn();

@@ -26,7 +26,6 @@ loginEmailInput.addEventListener("input", () => {
   }
 });
 
-
 loginPasswordInput.addEventListener("input", () => {
   let errorArr = validatePassword(loginPasswordInput.value);
   if (errorArr.length === 0) {

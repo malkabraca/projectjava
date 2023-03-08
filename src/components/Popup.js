@@ -3,8 +3,6 @@ import getNextId from "../utils/getNextId.js";
 import validateNumber from "../validation/validateNumber.js";
 import validateString from "../validation/validateString.js";
 import validateUrl from "../validation/validateUrl.js";
-import showToast from "../utils/Toast.js";
-
 
 let selectedProperty, editProperty;
 const editPropertiesPopupImgDisplay = document.getElementById(
@@ -87,7 +85,6 @@ const initPopup = (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
   checkIfCanEnableBtn();
   showPopup();
 };
-
 
 const checkIfCanEnableBtn = () => {
   PopupSaveBtn.disabled = !(
@@ -266,7 +263,6 @@ window.addEventListener("load", () => {
       selectedProperty.createdAt = editPropertiesPopupCreatedAt.value;
       selectedProperty.imgUrl = editPropertiesPopupImg.value;
       editProperty(selectedProperty);
-      showToast("Saved");
       hidePopup();
     });
   editPropertiesPopupImg.addEventListener("input", () => {

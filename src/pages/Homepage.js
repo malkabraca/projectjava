@@ -37,8 +37,14 @@ window.addEventListener("load", () => {
   originalPropertiesArr = [...propertiesArr];
   isAdmin = checkIfAdmin();
   //passing propertiesArr to PropertiesGallery.js
-  initialPropertiesGallery(propertiesArr,showPopupTwo);
-  initialPropertiesList(propertiesArr, isAdmin, deleteProperty, showPopup,showPopupTwo);
+  initialPropertiesGallery(propertiesArr, showPopupTwo);
+  initialPropertiesList(
+    propertiesArr,
+    isAdmin,
+    deleteProperty,
+    showPopup,
+    showPopupTwo
+  );
   initialPropertiesCarousel(propertiesArr);
   initializeElements();
   initializeBtns();
@@ -83,7 +89,6 @@ const initializeBtns = () => {
       let regex = new RegExp("^" + ev.target.value, "i");
       propertiesArr = originalPropertiesArr.filter((item) => {
         let reg = regex.test(item.name);
-        // console.log("item.name", item.name, " reg", reg);
         return reg;
       });
       updateDisplays();
@@ -150,8 +155,6 @@ const showPopupTwo = (id) => {
 const showNewPopup = () => {
   initPopup(undefined, addNewProperty);
 };
-
-
 
 const addNewProperty = (newProperty) => {
   originalPropertiesArr = [...originalPropertiesArr, newProperty];

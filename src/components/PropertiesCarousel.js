@@ -93,18 +93,17 @@ const initializeBtns = () => {
     imgToShow.addEventListener(
       "animationend",
       () => {
-        // imgToShow.classList.remove("opacity-0");
         imgToShow.classList.remove("fade-in");
         animationStarted--;
       },
       { once: true }
     );
-  
+
     showIdx = nextIdx;
   });
 };
 
-const createItem = (title, img,) => {
+const createItem = (title, img) => {
   //opacity-0 hide image
   return `
       <img src="${img}" alt="${title}" class="opacity-0" />

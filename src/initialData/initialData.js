@@ -13,7 +13,7 @@ const createData = () => {
       1200,
       `Zipi gold`,
       "12/1/2021",
-       "https://images.pexels.com/photos/1535162/pexels-photo-1535162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "https://images.pexels.com/photos/1535162/pexels-photo-1535162.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ),
     new Property(
       id++,
@@ -33,7 +33,7 @@ const createData = () => {
       3560,
       `yahakov zave`,
       "9/11/2023",
-       "https://images.pexels.com/photos/8138726/pexels-photo-8138726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+      "https://images.pexels.com/photos/8138726/pexels-photo-8138726.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     ),
   ];
   return propertiesArr;

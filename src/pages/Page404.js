@@ -4,6 +4,5 @@ import PAGES from "../models/pageModel.js";
 const clickHereHome = document.getElementById("click-here-home-page");
 
 clickHereHome.addEventListener("click", () => {
-    handlePageChange(PAGES.HOME);
-  });
-
+  handlePageChange(PAGES.HOME);
+});

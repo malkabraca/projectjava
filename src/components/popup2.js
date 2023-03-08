@@ -1,7 +1,6 @@
 import Property from "../models/Property.js";
 import getNextId from "../utils/getNextId.js";
 
-
 let selectedProperty, editProperty;
 const informationImgPopupImgDisplay = document.getElementById(
   "informationImgPopupImgDisplay"
@@ -29,12 +28,24 @@ const informationImgPopupImg = document.getElementById(
 );
 const informationImgPopup = document.getElementById("informationImgPopup");
 
-const initPopupInpor= (selectedPropertyFromHomePage, editPropertyFromHomePage) => {
-
+const initPopupInpor = (
+  selectedPropertyFromHomePage,
+  editPropertyFromHomePage
+) => {
   if (selectedPropertyFromHomePage) {
     selectedProperty = selectedPropertyFromHomePage;
   } else {
-    selectedProperty = new Property(getNextId(), "", "", "", "","","","","");
+    selectedProperty = new Property(
+      getNextId(),
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    );
   }
   editProperty = editPropertyFromHomePage;
   informationImgPopupImgDisplay.src = selectedProperty.imgUrl;
@@ -67,10 +78,10 @@ window.addEventListener("load", () => {
     }
     hidePopup();
   });
-  
+
   informationImgPopupImg.addEventListener("input", () => {
     informationImgPopupImgDisplay.src = informationImgPopupImg.value;
   });
 });
 
-export { initPopupInpor, showPopup, hidePopup};
+export { initPopupInpor, showPopup, hidePopup };

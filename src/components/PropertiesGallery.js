@@ -2,9 +2,12 @@ let propertiesArr;
 let galleryDiv;
 let showPopupTwo;
 //this function will transfer data from homepage to this page
-const initialPropertiesGallery = (propertiesArrFromHomePage,showPopupTwoFromHomePage) => {
+const initialPropertiesGallery = (
+  propertiesArrFromHomePage,
+  showPopupTwoFromHomePage
+) => {
   galleryDiv = document.getElementById("home-page-properties-gallery");
-  showPopupTwo=showPopupTwoFromHomePage;
+  showPopupTwo = showPopupTwoFromHomePage;
   updatePropertiesGallery(propertiesArrFromHomePage);
 };
 
@@ -18,7 +21,7 @@ const updatePropertiesGallery = (propertiesArrFromHomePage) => {
   createGallery();
 };
 
-const createCard = (title, credit, price, imgUrl,id) => {
+const createCard = (title, credit, price, imgUrl, id) => {
   return `
   <div class="col">
     <div class="card">
@@ -44,7 +47,6 @@ const createCard = (title, credit, price, imgUrl,id) => {
   </div>
   `;
 };
-
 
 const getIdFromClick = (ev) => {
   let idFromId = ev.target.id.split("-"); // split the id to array

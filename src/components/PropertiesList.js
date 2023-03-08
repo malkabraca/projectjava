@@ -16,7 +16,7 @@ const initialPropertiesList = (
   isAdmin = isAdminParam;
   deleteProperty = deletePropertyFromHomePage;
   showPopup = showPopupFromHomePage;
-  showPopupTwo = showPopupTwoFromHomePage
+  showPopupTwo = showPopupTwoFromHomePage;
   updatePropertiesList(propertiesArrFromHomePage);
 };
 
@@ -106,7 +106,6 @@ const createList = () => {
 
   clearEventListeners("propertyListImgBtn", handleImgBtnClick);
 
-
   //create new elements and remove old ones
   for (let property of propertiesArr) {
     innerStr += createItem(
@@ -121,7 +120,7 @@ const createList = () => {
   createBtnEventListener("propertyListDeleteBtn", handleDeleteBtnClick);
   // add event listeners for edit btns
   createBtnEventListener("propertyListEditBtn", handleEditBtnClick);
-  
+
   createBtnEventListener("propertyListImgBtn", handleImgBtnClick);
 };
 
