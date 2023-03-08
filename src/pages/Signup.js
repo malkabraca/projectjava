@@ -122,7 +122,6 @@ const checkNameInput = () => {
 
 const checkLastNameInput = () => {
   let errorArr = validateName(inputLastName.value);
-  //   console.log(reg.test(inputName.value));
   if (errorArr.length === 0) {
     //the text is ok
     inputLastName.classList.remove("is-invalid");
@@ -195,11 +194,8 @@ const checkRePasswordInput = () => {
 
 const checkStringInput = () => {
   let errorInputRules = false;
-  // console.log("inside string");
   for (i = 0; i < inputStrings.length; i++) {
-    /*  console.log("place", i, "string - ", inputStrings[i].value); */
     let errorArr = validateString(inputStrings[i].value);
-    //   console.log(reg.test(inputName.value));
     if (errorArr.length === 0 || inputStrings[i].value === "") {
       //the text is ok
       inputStrings[i].classList.remove("is-invalid");
@@ -291,7 +287,6 @@ btnRegister.addEventListener("click", () => {
   } else {
     //we have users
     users = JSON.parse(users); // convert from string to array of objects
-    // console.log("users from localStorage", users);
     for (let user of users) {
       if (user.email === inputEmail.value) {
         //display msg - email already exists

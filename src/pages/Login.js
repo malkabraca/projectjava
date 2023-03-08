@@ -2,6 +2,7 @@ import validateEmail from "../validation/validateEmail.js";
 import validatePassword from "../validation/validatePassword.js";
 import PAGES from "../models/pageModel.js";
 import handlePageChange from "../routes/router.js";
+import showToast from "../utils/Toast.js";
 
 const loginEmailInput = document.getElementById("login-input-email");
 const loginPasswordInput = document.getElementById("login-input-password");
@@ -57,6 +58,7 @@ loginBtn.addEventListener("click", () => {
       item.password === loginPasswordInput.value
   );
   if (!user) {
+    showToast("Invalid email and/or password");
     return;
   }
   //remember who connected
